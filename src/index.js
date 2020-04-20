@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router} from 'react-router-dom';
 
-import App from './components/app/App';
-import ErrorBoundry from "./components/error-boundry/ErrorBoundry";
+import App from './components/App/App';
+import ErrorBoundry from "./components/Common-components/error-boundry/ErrorBoundry";
 import CommonService from "./services/common-service";
 import { CommonProvider} from "./components/context/Context";
 
 import store from './store';
+
+import './index.scss';
+
 
 const commonService = new CommonService()
 

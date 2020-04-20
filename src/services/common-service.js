@@ -1,18 +1,12 @@
-export default  class CommonService {
-  data = [
-    {id: 1, title: 'AyNur'},
-    {id: 2, title: 'Ilmira'}
-  ];
+import fetcher from '../utils/fetcher'
 
-  getBooks() {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if(Math.random() > 0.75) {
-          reject(new Error( 'Something bad happened'));
-        } else {
-          return resolve(this.data)
-        }
-      }, 1000)
-    })
+export default  class CommonService {
+
+  async getPosts() {
+    return await fetcher('posts?_limit=10', 'GET')
+  }
+
+  async getNewExhibitions() {
+    return await fetcher('photos?_limit=3', 'GET')
   }
 }

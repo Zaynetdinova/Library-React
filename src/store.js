@@ -1,35 +1,18 @@
-import {createStore, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-
 import reducer from "./reducers";
+import {applyMiddleware, compose, createStore} from "redux";
+import thunk from "redux-thunk";
+import {sagaWatcher} from './reducers/sagas'
+import createSagaMiddleware from 'redux-saga'
 
-// Middleware функции, которые последовательно вызываются при обработке действий
-const logMiddleware = ({ getState }) => (next) => (action) => {
-  console.log(action.type, getState());
-  return next(action);
-};
+const saga = createSagaMiddleware()
 
-const stringMiddleware = () => (next) => (action) => {
-  if (typeof action === 'string') {
-    return next({
-      type: action
-    });
-  }
+const store = createStore(reducer, compose(
+  applyMiddleware(
+    thunk,  saga
+  ),
+))
 
-  return next(action);
-};
+saga.run(sagaWatcher)
 
-// Thunk middleware - позволяет передавать в store функции, как действия
-
-const store = createStore(reducer, applyMiddleware(
-  thunkMiddleware, stringMiddleware, logMiddleware));
-
-const myAction = (dispatch) => {
-  setTimeout(() => dispatch ({
-      type: 'DELAYED_ACTION'
-  }), 2000)
-}
-
-store.dispatch(myAction);
 
 export default  store;

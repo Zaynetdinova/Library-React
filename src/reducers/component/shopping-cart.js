@@ -1,11 +1,9 @@
-const  updateShoppingCart = (state, action) => {
+const initialState = {
+  cartItems: [],
+  orderTotal: 340
+}
 
-  if (state === undefined) {
-    return {
-      cartItems: [],
-      orderTotal: 340
-    }
-  }
+const  updateShoppingCart = (state = initialState, action) => {
 
   switch (action.type) {
     case 'BOOK_DECREASE_TO_CART':
@@ -15,7 +13,7 @@ const  updateShoppingCart = (state, action) => {
       return updateOrder(state, action.payload, 1)
 
     default:
-      return state.shoppingCart
+      return state
   }
 }
 
