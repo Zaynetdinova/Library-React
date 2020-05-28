@@ -3,10 +3,11 @@ import './MainPage.scss'
 import WithCommonService from "../../hoc/WithCommonService";
 import compose from "../../../utils";
 import {connect, useDispatch, useSelector} from "react-redux";
-import {MainBlock} from "./Modules/MainBlock/MainBlock";
+
 import {creatPosts, getNewExhibitions} from "../../../actions"
-import {InterestingNow} from "./Modules/InterestingNow/InterestingNow";
 import {NewExhibitions} from "./Modules/NewExhibitions/NewExhibitions";
+import {AllExhibitions} from "./Modules/AllExhibitions/AllExhibitions";
+import {MainBlock} from "../../Common-components/MainBlock/MainBlock";
 
 
 
@@ -22,10 +23,11 @@ import {NewExhibitions} from "./Modules/NewExhibitions/NewExhibitions";
    const loader = useSelector(state => state.app.loading)
    const postsFetch = useSelector(state => state.posts.fetchedPosts)
    const exhibitions = useSelector(state => state.newExhibitions.exhibitions)
+   const allExhibitions = useSelector(state => state.allExhibitions.exhibitions)
 
-   useEffect(() => {
-     dispatch(getNewExhibitions())
-   }, [])
+   // useEffect(() => {
+   //   dispatch(getNewExhibitions())
+   // }, [])
 
 
    useEffect(() => {
@@ -39,9 +41,15 @@ import {NewExhibitions} from "./Modules/NewExhibitions/NewExhibitions";
    return (
      <div className='Main-page'>
         <div className='Main-page-root'>
-          <MainBlock/>
-          <InterestingNow loader={loader} getAllPost={getAllPost} posts={posts}/>
-          <NewExhibitions exhibitions={exhibitions}/>
+
+          <div className='Main-page-header'>
+            <MainBlock title={'ВИРТУАЛЬНАЯ КНИЖНАЯ ВЫСТАВКА'}/>
+          </div>
+
+          <div className='Com-Content-wrapper'>
+            <NewExhibitions exhibitions={exhibitions}/>
+            <AllExhibitions allExhibitions={allExhibitions}/>
+          </div>
         </div>
      </div>
     )

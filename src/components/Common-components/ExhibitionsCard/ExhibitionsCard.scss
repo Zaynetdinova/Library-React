@@ -1,0 +1,38 @@
+.card {
+
+  .card-image {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+
+    .card-img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  .card-content {
+    .card-title {
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-bottom: 0;
+      display: block;
+    }
+
+    .wrapper-title {
+      padding-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+}
+

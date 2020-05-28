@@ -4,6 +4,7 @@ import {combineReducers} from "redux";
 import appReducer from "./component/appReducer";
 import postsReducer from "./component/postReducer";
 import newExhibitionsReducer from "./component/newExhibitionsReducer";
+import allExhibitionsReducer from "./component/allExhibitionsReducer";
 
 // reducer  должен вернуть полный объект state
 const reducer = combineReducers({
@@ -11,7 +12,8 @@ const reducer = combineReducers({
   shoppingCart: updateShoppingCart,
   app: appReducer,
   posts: postsReducer,
-  newExhibitions: newExhibitionsReducer
+  newExhibitions: newExhibitionsReducer,
+  allExhibitions: allExhibitionsReducer
 })
 
 export default reducer

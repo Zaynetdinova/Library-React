@@ -10,7 +10,6 @@ const WithCommonService = () => (Wrapped) => {
             return (
               <Wrapped {...props} CommonService={CommonService}/>
             )
-
           }
         }
       </CommonConsumer>

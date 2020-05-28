@@ -1,5 +1,11 @@
+@import '../../assets/scss/common';
+@import '../../assets/scss/colors';
+@import '../../assets/scss/vars';
+
 .App {
-  max-width: 1280px;
-  margin: 0 auto;
   overflow-x: hidden;
+
+  .App-route {
+
+  }
 }

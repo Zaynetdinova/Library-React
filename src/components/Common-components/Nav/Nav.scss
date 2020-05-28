@@ -1,0 +1,27 @@
+.Nav {
+  max-width: 1280px;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  nav {
+    background: none;
+    box-shadow: none;
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      img {
+        height: 40px;
+        width: auto;
+      }
+    }
+    a {
+      color: black;
+    }
+  }
+
+  .nav-wrapper {
+
+  }
+}

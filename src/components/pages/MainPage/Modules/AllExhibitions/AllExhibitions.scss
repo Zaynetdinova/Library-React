@@ -1,33 +1,30 @@
 @import '../../../../../assets/scss/vars';
 
-.New-exhibitions {
+.All-exhibitions {
   margin: 40px 0;
-  .main-title {
-    margin: 20px 0;
-  }
-
   .content {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 
-    .block-wrapper {
-      width: 24%;
-      margin: 6px 0;
+
+    .content-block {
+      width: 32%;
     }
   }
 
   @media (max-width: $width-md-size) {
     .content {
-      .block-wrapper {
+      .content-block {
         width: 48%;
       }
     }
+
   }
 
   @media (max-width: $mobile-breakpoint-portrait) {
     .content {
-      .block-wrapper {
+      .content-block {
         width: 100%;
       }
     }
