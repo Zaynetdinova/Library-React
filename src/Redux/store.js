@@ -1,6 +1,7 @@
 import reducer from "./reducers";
 import {applyMiddleware, compose, createStore} from "redux";
 import thunk from "redux-thunk";
+
 import {sagaWatcher} from './reducers/sagas'
 import createSagaMiddleware from 'redux-saga'
 
