@@ -4,7 +4,7 @@ import WithCommonService from "../../hoc/WithCommonService";
 import compose from "../../../utils";
 import {connect, useDispatch, useSelector} from "react-redux";
 
-import {creatPosts, getNewExhibitions} from "../../../actions"
+import {creatPosts, getNewExhibitions} from "../../../Redux/actions"
 import {NewExhibitions} from "./Modules/NewExhibitions/NewExhibitions";
 import {AllExhibitions} from "./Modules/AllExhibitions/AllExhibitions";
 import {MainBlock} from "../../Common-components/MainBlock/MainBlock";

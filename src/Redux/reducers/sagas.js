@@ -1,7 +1,7 @@
 import {takeEvery, put, call} from 'redux-saga/effects'
 import {ACTION_NEW_EXHIBITIONS, FETCH_NEW_EXHIBITIONS, FETCH_POSTS, REQUEST_POSTS} from "./types";
 import {hideLoader, showLoader} from "../actions";
-import CommonService from "../services/common-service";
+import CommonService from "../../services/common-service";
 
 
 const commonService = new CommonService()
